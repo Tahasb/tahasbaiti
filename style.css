@@ -1,0 +1,411 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #5c62ec;
+  --hover-color: #3c40ae;
+  --accent-color: #85bfd1;
+  --gray: #a0a0a1;
+  --white: #ffffff;
+  --border-color: #1c1e22;
+  --filler-color: #26292d;
+  --background-color: #171718;
+
+  --ff-primary: "DM Sans";
+
+  --fs-h1: 34px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-body: 14px;
+  --fs-links: 12px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+.sr-only {
+  /* I added this because sr-only doesnt work */
+  opacity: 0;
+}
+body {
+  background: var(--background-color);
+  color: var(--white);
+  font-family: var(--ff-primary);
+}
+section {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: auto;
+}
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-medium);
+}
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+}
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-regular);
+}
+p {
+  line-height: 1.75rem;
+  font-size: var(--fs-body);
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+  display: block;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nar bar */
+header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+}
+.logo {
+  font-size: var(--fs-h3);
+}
+.nav-bar ul {
+  position: fixed;
+  z-index: 1000;
+  inset: 9% 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--background-color);
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 350ms ease-out;
+}
+.nav-bar[data-visible="true"] ul {
+  transform: translateX(0%);
+  transition: transform 350ms ease-out;
+}
+.mobile-nav-toggle {
+  background: url("https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png");
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+}
+.mobile-nav-toggle[aria-expanded="true"] {
+  background: url("https://img.icons8.com/ios-filled/50/ffffff/delete-sign--v1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 2rem;
+}
+/* Hero Section */
+.hero-section {
+  padding: 4rem 3rem 8rem 3rem;
+  text-align: center;
+  height: 100vh;
+}
+.hero-section .my-name {
+  color: var(--primary-color);
+}
+.hero-section p {
+  margin-bottom: 2rem;
+}
+.colored-button,
+.outlined-button {
+  border-radius: 8px;
+  padding: 0.7rem 0.5rem;
+  width: 160px;
+  margin: auto;
+}
+.colored-button {
+  background-color: var(--primary-color);
+  border: solid 1px var(--primary-color);
+}
+.colored-button:hover {
+  background-color: var(--hover-color);
+  border: solid 1px var(--hover-color);
+  transition: 0.5s;
+}
+.outlined-button {
+  border: 1px solid var(--white);
+  margin-top: 1rem;
+}
+.outlined-button:hover {
+  color: var(--gray);
+  border: solid 1px var(--gray);
+  transition: 0.5s;
+}
+/* About me section */
+.about-section {
+  background-color: var(--filler-color);
+  /* width: 100%; */
+  border-radius: 8px;
+  margin-bottom: 5rem;
+}
+.my-headshot {
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+  border-radius: 8px;
+}
+.about-section .about-button {
+  text-align: center;
+  margin: 0;
+}
+
+/* Projects section */
+.projects-section {
+  text-align: center;
+}
+.projects-section h2 {
+  text-align: left;
+}
+.projects-section img {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  border-top: 1px solid var(--filler-color);
+  border-bottom: 1px solid var(--filler-color);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  margin: auto;
+  max-width: 1400px;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+footer .social li:first-child {
+  flex-basis: 100%;
+}
+footer .social {
+  flex-direction: row;
+}
+footer li {
+  font-size: var(--fs-links);
+}
+
+.first-link-element {
+  color: var(--accent-color);
+  font-size: var(--fs-body);
+}
+.fab {
+  font-size: var(--fs-h3);
+}
+.fab:hover {
+  color: var(--hover-color);
+  transition: 350ms ease-out;
+}
+small {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  font-size: 12px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* About me page */
+.about-me-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me-section h1 {
+  margin: 1rem 0;
+}
+.about-me-section .about-me-text {
+  margin-top: 0;
+}
+.about-me-section .my-email {
+  color: var(--primary-color);
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+.skills h3 {
+  margin: 0.5rem 0;
+}
+.skills-flex {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+.skills .skill {
+  text-align: left;
+  background-color: var(--filler-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.skills span[class~="fa"] {
+  color: red;
+}
+.fa-solid {
+  color: red;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+/* Contact me  */
+.contact-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-section h1 {
+  margin-bottom: 0;
+}
+.contact-section p {
+  margin-bottom: 2rem;
+}
+.contact-form {
+  background-color: var(--filler-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+}
+.contact-section label {
+  display: block;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+input {
+  font-family: var(--ff-primary);
+}
+.contact-section .input-bg {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--border-color);
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  padding: 0 1rem;
+}
+.contact-section #message {
+  height: 150px;
+  padding: 1rem;
+}
+input[type="button"] {
+  width: 100%;
+  cursor: pointer;
+  color: var(--white);
+}
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 60px;
+    --fs-h2: 34px;
+    --fs-h3: 30px;
+    /* --fs-body: 16px;
+    --fs-links: 14px; */
+  }
+  a {
+    display: inline-block;
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+  .nav-bar ul {
+    flex-direction: row;
+    position: inherit;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0%);
+    padding: 0;
+  }
+  .nav-bar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: 0.3s;
+  }
+  .nav-bar a:hover::after {
+    width: 100%;
+  }
+  .hero-section p {
+    font-size: 20px;
+  }
+  .outlined-button {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  .about-section {
+    max-width: 1000px;
+    display: flex;
+    gap: 1rem;
+  }
+  footer {
+    flex-direction: row;
+    gap: 8rem;
+    text-align: left;
+  }
+  footer ul {
+    margin: 0;
+  }
+  footer .social {
+    justify-content: left;
+  }
+  small {
+    text-align: left;
+  }
+
+  .about-me-section {
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .about-me-text-wrapper {
+    max-width: 50%;
+  }
+
+  .skills .skill {
+    max-width: 300px;
+  }
+}
