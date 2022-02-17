@@ -120,7 +120,6 @@ header {
 .hero-section {
   padding: 4rem 3rem 8rem 3rem;
   text-align: center;
-  height: 100vh;
 }
 .hero-section .my-name {
   color: var(--primary-color);
