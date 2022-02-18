@@ -404,6 +404,7 @@ input[type="button"] {
   }
 
   .img-description-layer {
+    visibility:hidden;
     opacity: 0;
   }
 
