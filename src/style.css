@@ -192,6 +192,7 @@ footer {
   flex-direction: column;
   padding: 2rem 1rem;
   margin: auto;
+  margin-top: 5rem;
   max-width: 1400px;
 }
 footer ul {
@@ -433,6 +434,7 @@ input[type="button"] {
     flex-direction: row;
     gap: 8rem;
     text-align: left;
+    margin-top:10rem;
   }
   footer ul {
     margin: 0;
