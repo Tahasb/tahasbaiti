@@ -111,7 +111,6 @@ header {
   z-index: 9999;
 }
 .mobile-nav-toggle[aria-expanded="true"] {
-  background: url("https://img.icons8.com/ios-filled/50/ffffff/delete-sign--v1.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 2rem;
@@ -191,8 +190,13 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-}
+  opacity: 0;
+    transition: opacity 800ms ease-in;
 
+}
+.img-wrap.appear{
+  opacity: 1;
+}
 .img-description-layer {
   position: absolute;
   inset: 0 0 0 0;
