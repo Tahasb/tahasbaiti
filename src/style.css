@@ -186,17 +186,27 @@ header {
   max-width: 1400px;
   border-radius: 8px;
 }
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .img-wrap {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  opacity: 0;
-    transition: opacity 800ms ease-in;
+  /*opacity: 0;
+    transition: opacity 800ms ease-in;*/
 
 }
 .img-wrap.appear{
-  opacity: 1;
-}
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;}
 .img-description-layer {
   position: absolute;
   inset: 0 0 0 0;
