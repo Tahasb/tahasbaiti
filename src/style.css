@@ -186,30 +186,18 @@ header {
   max-width: 1400px;
   border-radius: 8px;
 }
-@keyframes fadeInUp {
-  from {
-    transform: translateY(50px);
-  }
 
-  to {
-    transform: translate3d(0);
-    opacity: 1;
-  }
-}
 .img-wrap {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
   opacity: 0;
-  /* transform: translateY(40px);
-  transition: opacity 1s ease-in, transform 1s ease-in; */
+  transform: translateY(40px);
 }
 .img-wrap.appear {
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  /* opacity: 1;
-  transform: translateY(0); */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-in, transform 1s ease-in;
 }
 .img-description-layer {
   position: absolute;
